@@ -43,7 +43,6 @@ class AmericanAirlineViewModel: ObservableObject {
     func performSearch(searchText: String) async {
         if !searchText.isEmpty {
             let urlString = "\(Constants.apiEndpoint)?q=\(searchText.replacingOccurrences(of: " ", with: "+"))&format=json&pretty=1"
-            print(urlString)
             guard let url = URL(string: urlString) else {
                 DispatchQueue.main.async {
                     self.customError = NetworkError.badUrl
