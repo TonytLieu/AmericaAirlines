@@ -7,10 +7,9 @@
 
 import Foundation
 
-struct DuckDuckGoResponse: Decodable
-{
-    
-    let results, relatedTopics: [AAResult]
+struct DuckDuckGoResponse: Decodable {
+    let results: [AAResult]
+    let relatedTopics: [AAResult]
     
     enum CodingKeys: String, CodingKey {
         case results = "Results"
@@ -18,15 +17,13 @@ struct DuckDuckGoResponse: Decodable
     }
 }
 
-struct AAResult: Decodable {
-    
-    let firstURL, result, text: String
+struct AAResult: Decodable, Identifiable {
+    let id = UUID()
+    let firstURL: String
+    let text: String
     
     enum CodingKeys: String, CodingKey {
-        case result = "Result"
         case firstURL = "FirstURL"
-        case text     = "Text"
+        case text = "Text"
     }
-
 }
-

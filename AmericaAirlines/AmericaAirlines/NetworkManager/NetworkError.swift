@@ -10,8 +10,9 @@ import Foundation
 enum NetworkError:Error{
     case badUrl
     case badServerResponse
-    case Nodata
+    case nodata
     case parsingError
+    case unknown
 }
 
 extension NetworkError:LocalizedError{
@@ -20,7 +21,7 @@ extension NetworkError:LocalizedError{
             
         case .badUrl:
             return NSLocalizedString("API url is incorrect", comment: "urlError")
-        case .Nodata:
+        case .nodata:
             return NSLocalizedString("API could not find data", comment: "data not Found" )
         case .badServerResponse:
             return NSLocalizedString("API server can't be reach", comment: "server not found")

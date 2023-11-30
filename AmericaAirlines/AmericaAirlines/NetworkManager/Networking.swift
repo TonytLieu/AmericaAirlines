@@ -8,7 +8,7 @@
 import Foundation
 
 protocol Networking{
-    func getDataApi<T:Decodable>(url:URL, modelType:T.Type) async throws-> T
+    func getDataApi<T:Decodable>(url: URL, modelType: T.Type) async throws -> T
 }
 
 class NetworkManager:Networking{
@@ -17,7 +17,7 @@ class NetworkManager:Networking{
             let (data,_) = try await URLSession.shared.data(from: url)
             let parsedData = try JSONDecoder().decode(modelType, from: data)
             return parsedData
-        }catch{
+        } catch {
             throw error
         }
     }

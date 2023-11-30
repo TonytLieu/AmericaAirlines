@@ -23,11 +23,13 @@ struct ContentView: View {
     
     var body: some View {
         VStack {
+            TextField("Search...", text: $americanAirlineViewModel.searchText)
+                .padding(.horizontal, 10)
             List{
                 if !americanAirlineViewModel.results.isEmpty {
-                    ForEach{
-                        Section("Result") {
-                            CellView()
+                    Section("Result") {
+                        ForEach(americanAirlineViewModel.results) { result in
+                            CellView(title: result.text, url: result.firstURL)
                         }
                     }
                 }else {
@@ -36,9 +38,9 @@ struct ContentView: View {
                 
                 
                 if !americanAirlineViewModel.relatedTopics.isEmpty {
-                    ForEach{
-                        Section("Related Topics") {
-                            CellView()
+                    Section("Related Topics") {
+                        ForEach(americanAirlineViewModel.relatedTopics) { result in
+                            CellView(title: result.text, url: result.firstURL)
                         }
                     }
                 }else {
@@ -46,11 +48,10 @@ struct ContentView: View {
                 }
             }
         }
-        .searchable(text: americanAirlineViewModel.searchText, placement: .automatic, prompt: "Search Planet")
         .alert(isPresented: $isErrorOccurred) {
             Alert(title: Text(americanAirlineViewModel.customError?.localizedDescription ?? ""),
                   message: Text("Try Again"),
-                  dismissButton: .default(Text("Okay") {
+                  dismissButton: .cancel(Text("OKay"), action: {
                 americanAirlineViewModel.supressError()
             }))
         }

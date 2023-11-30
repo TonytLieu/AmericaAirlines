@@ -30,7 +30,7 @@ class AmericanAirlineViewModel: ObservableObject {
     
     func addSubscriptions() {
         $searchText
-            .receive(on: RunLoop.main)
+            .receive(on: DispatchQueue.main)
             .debounce(for: 0.5, scheduler: DispatchQueue.main)
             .sink { val in
                 Task {
@@ -41,36 +41,39 @@ class AmericanAirlineViewModel: ObservableObject {
     }
     
     func performSearch(searchText: String) async {
-        var urlString = "\(Constants.apiEndpoint)?\(searchText.replacingOccurrences(of: " ", with: "+"))&format=json&pretty=1"
-        guard let url = URL(string: urlString) else {
-            DispatchQueue.main.async {
-                self.customError = NetworkError.badUrl
-                self.errorOccured = true
-            }
-            return
-        }
-        
-        do {
-            let res = try await networkManager.getDataApi(url: url, modelType: DuckDuckGoResponse.self)
-            
-            if res.results.isEmpty && res.relatedTopics.isEmpty {
-                self.customError = NetworkError.noData
-                self.errorOccured = true
+        if !searchText.isEmpty {
+            let urlString = "\(Constants.apiEndpoint)?q=\(searchText.replacingOccurrences(of: " ", with: "+"))&format=json&pretty=1"
+            print(urlString)
+            guard let url = URL(string: urlString) else {
+                DispatchQueue.main.async {
+                    self.customError = NetworkError.badUrl
+                    self.errorOccured = true
+                }
                 return
             }
             
-            DispatchQueue.main.async {
-                results = res.results
-                relatedTopics = res.relatedTopics
-            }
-        } catch {
-            DispatchQueue.main.async {
-                if let error = error as? NetworkError {
-                    self.customError = error
+            do {
+                let res = try await networkManager.getDataApi(url: url, modelType: DuckDuckGoResponse.self)
+                
+                if res.results.isEmpty && res.relatedTopics.isEmpty {
+                    self.customError = NetworkError.nodata
                     self.errorOccured = true
-                } else {
-                    self.customError = NetworkError.unknown
-                    self.errorOccured = true
+                    return
+                }
+                
+                DispatchQueue.main.async {
+                    self.results = res.results
+                    self.relatedTopics = res.relatedTopics
+                }
+            } catch {
+                DispatchQueue.main.async {
+                    if let error = error as? NetworkError {
+                        self.customError = error
+                        self.errorOccured = true
+                    } else {
+                        self.customError = NetworkError.unknown
+                        self.errorOccured = true
+                    }
                 }
             }
         }
