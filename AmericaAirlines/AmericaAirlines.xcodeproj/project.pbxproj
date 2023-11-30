@@ -14,6 +14,8 @@
 		EB38D1D42B18CDDF0090F68B /* AmericaAirlinesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB38D1D32B18CDDF0090F68B /* AmericaAirlinesTests.swift */; };
 		EB38D1DE2B18CDDF0090F68B /* AmericaAirlinesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB38D1DD2B18CDDF0090F68B /* AmericaAirlinesUITests.swift */; };
 		EB38D1E02B18CDDF0090F68B /* AmericaAirlinesUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB38D1DF2B18CDDF0090F68B /* AmericaAirlinesUITestsLaunchTests.swift */; };
+		EB38D1F22B18D17D0090F68B /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB38D1F12B18D17D0090F68B /* NetworkManager.swift */; };
+		EB38D1F42B18D19A0090F68B /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB38D1F32B18D1990090F68B /* NetworkError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +46,8 @@
 		EB38D1D92B18CDDF0090F68B /* AmericaAirlinesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AmericaAirlinesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB38D1DD2B18CDDF0090F68B /* AmericaAirlinesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmericaAirlinesUITests.swift; sourceTree = "<group>"; };
 		EB38D1DF2B18CDDF0090F68B /* AmericaAirlinesUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmericaAirlinesUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		EB38D1F12B18D17D0090F68B /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		EB38D1F32B18D1990090F68B /* NetworkError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +98,7 @@
 		EB38D1C12B18CDDD0090F68B /* AmericaAirlines */ = {
 			isa = PBXGroup;
 			children = (
+				EB38D1EC2B18D1040090F68B /* NetworkManager */,
 				EB38D1C22B18CDDD0090F68B /* AmericaAirlinesApp.swift */,
 				EB38D1C42B18CDDD0090F68B /* ContentView.swift */,
 				EB38D1C62B18CDDF0090F68B /* Assets.xcassets */,
@@ -125,6 +130,15 @@
 				EB38D1DF2B18CDDF0090F68B /* AmericaAirlinesUITestsLaunchTests.swift */,
 			);
 			path = AmericaAirlinesUITests;
+			sourceTree = "<group>";
+		};
+		EB38D1EC2B18D1040090F68B /* NetworkManager */ = {
+			isa = PBXGroup;
+			children = (
+				EB38D1F32B18D1990090F68B /* NetworkError.swift */,
+				EB38D1F12B18D17D0090F68B /* NetworkManager.swift */,
+			);
+			path = NetworkManager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,7 +272,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				EB38D1C52B18CDDD0090F68B /* ContentView.swift in Sources */,
+				EB38D1F42B18D19A0090F68B /* NetworkError.swift in Sources */,
 				EB38D1C32B18CDDD0090F68B /* AmericaAirlinesApp.swift in Sources */,
+				EB38D1F22B18D17D0090F68B /* NetworkManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
