@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AD8AE3B72B18EB1000D9F14B /* CellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8AE3B62B18EB1000D9F14B /* CellView.swift */; };
 		BB8862A22B18D0CC00EE56B1 /* AmericanAirlineViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8862A12B18D0CC00EE56B1 /* AmericanAirlineViewModel.swift */; };
 		BB8862A52B18D1A900EE56B1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8862A42B18D1A900EE56B1 /* Constants.swift */; };
 		EB38D1C32B18CDDD0090F68B /* AmericaAirlinesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB38D1C22B18CDDD0090F68B /* AmericaAirlinesApp.swift */; };
@@ -38,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AD8AE3B62B18EB1000D9F14B /* CellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellView.swift; sourceTree = "<group>"; };
 		BB8862A12B18D0CC00EE56B1 /* AmericanAirlineViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmericanAirlineViewModel.swift; sourceTree = "<group>"; };
 		BB8862A42B18D1A900EE56B1 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		EB38D1BF2B18CDDD0090F68B /* AmericaAirlines.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AmericaAirlines.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -122,6 +124,7 @@
 				BB8862A32B18D19700EE56B1 /* Constants */,
 				BB8862A02B18D0BC00EE56B1 /* ViewModel */,
 				EB38D1C22B18CDDD0090F68B /* AmericaAirlinesApp.swift */,
+				AD8AE3B62B18EB1000D9F14B /* CellView.swift */,
 				EB38D1C42B18CDDD0090F68B /* ContentView.swift */,
 				EB38D1C62B18CDDF0090F68B /* Assets.xcassets */,
 				EB38D1C82B18CDDF0090F68B /* Preview Content */,
@@ -299,6 +302,7 @@
 				EB38D1FA2B18E6B30090F68B /* NetworkError.swift in Sources */,
 				EB38D1C32B18CDDD0090F68B /* AmericaAirlinesApp.swift in Sources */,
 				BB8862A52B18D1A900EE56B1 /* Constants.swift in Sources */,
+				AD8AE3B72B18EB1000D9F14B /* CellView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
