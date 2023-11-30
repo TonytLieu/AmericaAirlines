@@ -21,6 +21,7 @@ class AmericanAirlineViewModel: ObservableObject {
     
     init(networkManager: NetworkManager = NetworkManager()) {
         self.networkManager = networkManager
+        self.addSubscriptions()
     }
     
     deinit {
