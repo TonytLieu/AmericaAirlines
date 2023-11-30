@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Combine
 
 class AmericanAirlineViewModel: ObservableObject {
     @Published var searchText: String = ""
@@ -14,10 +15,27 @@ class AmericanAirlineViewModel: ObservableObject {
     @Published var errorOccured: Bool = false
     @Published var customError: NetworkError?
     
+    var cancellables = Set<AnyCancellable>()
+    
     var networkManager: NetworkManager
     
     init(networkManager: NetworkManager = NetworkManager()) {
         self.networkManager = networkManager
+    }
+    
+    deinit {
+        cancellables.removeAll()
+    }
+    
+    func addSubscriptions() {
+        $searchText
+            .debounce(for: 0.5, scheduler: DispatchQueue.main)
+            .sink { val in
+                Task {
+                    await self.performSearch(searchText: val)
+                }
+            }
+            .store(in: &cancellables)
     }
     
     func performSearch(searchText: String) async {
