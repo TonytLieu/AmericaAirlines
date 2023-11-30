@@ -11,7 +11,7 @@ import Combine
 class AmericanAirlineViewModel: ObservableObject {
     @Published var searchText: String = ""
     @Published var results: [AAResult] = []
-    @Published var relatedTopics: [AARelatedTopic] = []
+    @Published var relatedTopics: [AAResult] = []
     @Published var errorOccured: Bool = false
     @Published var customError: NetworkError?
     
