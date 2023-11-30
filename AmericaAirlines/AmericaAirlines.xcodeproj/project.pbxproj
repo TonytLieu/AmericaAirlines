@@ -19,6 +19,7 @@
 		EB38D1E02B18CDDF0090F68B /* AmericaAirlinesUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB38D1DF2B18CDDF0090F68B /* AmericaAirlinesUITestsLaunchTests.swift */; };
 		EB38D1F82B18E6A80090F68B /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB38D1F72B18E6A80090F68B /* Networking.swift */; };
 		EB38D1FA2B18E6B30090F68B /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB38D1F92B18E6B30090F68B /* NetworkError.swift */; };
+		FF8136C22B1900180036FA2B /* AmericanAirlinesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8136C12B1900180036FA2B /* AmericanAirlinesModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,7 @@
 		EB38D1DF2B18CDDF0090F68B /* AmericaAirlinesUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmericaAirlinesUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		EB38D1F72B18E6A80090F68B /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 		EB38D1F92B18E6B30090F68B /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		FF8136C12B1900180036FA2B /* AmericanAirlinesModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AmericanAirlinesModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +122,7 @@
 		EB38D1C12B18CDDD0090F68B /* AmericaAirlines */ = {
 			isa = PBXGroup;
 			children = (
+				FF8136C02B1900180036FA2B /* Model */,
 				EB38D1F62B18E5FF0090F68B /* NetworkManager */,
 				BB8862A32B18D19700EE56B1 /* Constants */,
 				BB8862A02B18D0BC00EE56B1 /* ViewModel */,
@@ -164,6 +167,14 @@
 				EB38D1F92B18E6B30090F68B /* NetworkError.swift */,
 			);
 			path = NetworkManager;
+			sourceTree = "<group>";
+		};
+		FF8136C02B1900180036FA2B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FF8136C12B1900180036FA2B /* AmericanAirlinesModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -302,6 +313,7 @@
 				EB38D1FA2B18E6B30090F68B /* NetworkError.swift in Sources */,
 				EB38D1C32B18CDDD0090F68B /* AmericaAirlinesApp.swift in Sources */,
 				BB8862A52B18D1A900EE56B1 /* Constants.swift in Sources */,
+				FF8136C22B1900180036FA2B /* AmericanAirlinesModel.swift in Sources */,
 				AD8AE3B72B18EB1000D9F14B /* CellView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
