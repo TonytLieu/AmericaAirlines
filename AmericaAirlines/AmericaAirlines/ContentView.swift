@@ -20,7 +20,6 @@ struct ContentView: View {
     
     @StateObject var americanAirlineViewModel = AmericanAirlineViewModel()
     @State var isErrorOccurred:Bool = false
-    @State var searchText: String = ""
     
     var body: some View {
         VStack {
@@ -47,14 +46,13 @@ struct ContentView: View {
                 }
             }
         }
-        .searchable(text: $searchText, placement: .automatic, prompt: "Search Planet")
-        .onChange(of: searchText) { oldValue, newValue in
-            americanAirlineViewModel.performSearch(searchText: newValue)
-        }
+        .searchable(text: americanAirlineViewModel.searchText, placement: .automatic, prompt: "Search Planet")
         .alert(isPresented: $isErrorOccurred) {
             Alert(title: Text(americanAirlineViewModel.customError?.localizedDescription ?? ""),
                   message: Text("Try Again"),
-                  dismissButton: .default(Text("Okay")))
+                  dismissButton: .default(Text("Okay") {
+                americanAirlineViewModel.supressError()
+            }))
         }
     }
 }
