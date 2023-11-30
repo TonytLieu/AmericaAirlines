@@ -29,6 +29,7 @@ class AmericanAirlineViewModel: ObservableObject {
     
     func addSubscriptions() {
         $searchText
+            .receive(on: RunLoop.main)
             .debounce(for: 0.5, scheduler: DispatchQueue.main)
             .sink { val in
                 Task {
